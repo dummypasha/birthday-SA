@@ -3,22 +3,19 @@ import { useState } from 'react'
 
 export default function Intro({ next, startMusic }) {
   const [revealed, setRevealed] = useState(false)
+  const [musicOn, setMusicOn] = useState(false)
 
   const handleReveal = () => {
-    if (!revealed) {
-      startMusic()   // 🎵 guaranteed gesture
-      setRevealed(true)
-    }
+    if (!revealed) setRevealed(true)
   }
 
-  const handleBegin = (e) => {
-    e.stopPropagation()
-    next()
+  const handlePlayMusic = () => {
+    startMusic()          // ✅ guaranteed on all devices
+    setMusicOn(true)
   }
 
   return (
     <section className="intro-section">
-      {/* Floating stars */}
       <div className="stars">
         <span></span><span></span><span></span>
         <span></span><span></span><span></span>
@@ -29,9 +26,7 @@ export default function Intro({ next, startMusic }) {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2 }}
-
-        // 🔥 IMPORTANT CHANGE
-        onPointerDown={handleReveal}
+        onClick={handleReveal}
       >
         <h1>This is for you.</h1>
 
@@ -49,7 +44,20 @@ export default function Intro({ next, startMusic }) {
               A small journey through your strength and kindness.
             </motion.p>
 
-            <button onClick={handleBegin}>Begin →</button>
+            {!musicOn && (
+              <button
+                onClick={handlePlayMusic}
+                style={{ marginTop: '18px' }}
+              >
+                Tap here
+              </button>
+            )}
+
+            {musicOn && (
+              <button onClick={next} style={{ marginTop: '18px' }}>
+                Begin →
+              </button>
+            )}
           </>
         )}
       </motion.div>

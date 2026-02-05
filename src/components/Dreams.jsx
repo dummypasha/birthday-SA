@@ -9,15 +9,16 @@ export default function Dreams({ next, back }) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <h1>Dreams Far From Home</h1>
+        <h1>Dreams Built with Patience</h1>
 
-        <p>New country. New challenges.</p>
-        <p>Same brave heart.</p>
+        <p>Inter BiPC. Long-term preparation.</p>
+        <p>One unwavering dream — MBBS.</p>
 
-        <p>🌙 Learning to be strong, even on quiet nights.</p>
-        <p>🌸 Carrying memories of home wherever she goes.</p>
-        <p>💫 Finding courage in unfamiliar places.</p>
-        <p>✨ Growing every day — silently, beautifully.</p>
+        <p>📚 Late nights filled with textbooks and hope.</p>
+        <p>🌙 Learning patience when results took time.</p>
+        <p>🌸 Holding on when giving up felt easier.</p>
+        <p>💫 Turning struggle into strength, silently.</p>
+        <p>✨ Growing every day — disciplined, determined, and brave.</p>
 
         {/* Navigation */}
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '40px' }}>

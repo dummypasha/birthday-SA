@@ -3,7 +3,7 @@ import { useState, useRef } from 'react'
 
 import img1 from '../assets/girl1.png'
 import img2 from '../assets/girl1.png'
-import img3 from '../assets/girl2.png'
+import img3 from '../assets/girl1.png'
 
 import clickSound from '../assets/click.mp3'
 import memorySound from '../assets/memory.mp3'
@@ -28,6 +28,42 @@ const photos = [
     )
   },
 
+  {
+    img: img2,
+    text: (
+      <>
+        <span>Drama mode ON 🎭</span>
+      <span>Anger today, memory gone tomorrow 😄</span>
+      <span>----------------</span>
+      <span>Stay cool 😌</span>
+      <span>Calm mind, warm heart — and don’t forget the little things 💫</span>
+      </>
+    )
+  },
+
+  {
+    img: img2,
+    text: (
+      <>
+        <span>Reel squad 🎬</span>
+      <span>Good friends + crazy reels = pure happiness 😄💃</span>
+      </>
+    )
+  },
+
+  {
+    img: img2,
+    text: (
+      <>
+       <span>Brainy queen 🧠✨</span>
+      <span>Topper by marks, winner by hard work 💪📚</span>
+      <span>----------------</span>
+      <span>Smart & strong 💕</span>
+      <span>Topper in class, inspiration to many.</span>
+      </>
+    )
+  },
+
  
   {
     img: img3,
@@ -36,12 +72,13 @@ const photos = [
         <span>Thanks for clicking this✨ moment 🎬</span>
         <span>
           It was a cute moment.  
-          I hope you remembered it —  
-          a very special memory 🤍
+          Enjoy the song - 🤍
         </span>
       </>
     )
   }
+
+  
 ]
 
 export default function Gallery({ next, back }) {

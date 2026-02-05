@@ -91,7 +91,7 @@ export default function App() {
     <Dreams next={next} back={back} />,
     <Gallery next={next} back={back} />,
     <Parents next={next} back={back} />,
-    <Grandfather next={next} back={back} />,
+    <Grandfather next={next} back={back} stopGfMusic={stopGfMusic} />,
     <Message next={next} back={back} />,
     <Finale back={back} goHome={goHome} />
 

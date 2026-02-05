@@ -9,7 +9,7 @@ export default function Message({ next, back }) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <h1>Dear Thanmayee,</h1>
+        <h1>Dear Suchitra,</h1>
 
         <p>
           Just a small reminder 🤍  

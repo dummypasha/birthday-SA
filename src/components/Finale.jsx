@@ -1,6 +1,6 @@
 import Confetti from 'react-confetti'
 import { useEffect, useState } from 'react'
-import birthdayPic from '../assets/ORG_GIRL.jpg'
+import birthdayPic from '../assets/ORG_GIRL.png'
 
 export default function Finale({ back, goHome }) {
   const [show, setShow] = useState(true)
@@ -20,7 +20,7 @@ export default function Finale({ back, goHome }) {
           <img src={birthdayPic} alt="Birthday Girl" />
         </div>
 
-        <h1>Happiest Birthday Thanmayee 🎂💖</h1>
+        <h1>Happiest Birthday Suchitranjali 🎂💖</h1>
 
         <p>
           You deserve happiness, endless smiles.  
