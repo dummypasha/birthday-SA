@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-
 body {
   margin: 0;
   background: radial-gradient(circle at top, #111, #000);
@@ -104,20 +103,12 @@ audio {
   backdrop-filter: blur(14px);
   border-radius: 26px;
   padding: 70px 30px;
-
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
 }
 
-/* Intro text colors */
-.intro-section h1 {
-  color: #2b1c3d;
-}
+.intro-section h1 { color: #2b1c3d; }
+.intro-section p { color: #4b3b63; }
 
-.intro-section p {
-  color: #4b3b63;
-}
-
-/* Intro button */
 .intro-section button {
   background: #ffffff;
   color: #2b1c3d;
@@ -129,7 +120,7 @@ audio {
 }
 
 /* =========================
-   FLOATING STARS (INTRO)
+   FLOATING STARS
    ========================= */
 
 .stars {
@@ -149,7 +140,6 @@ audio {
   animation: floatUp 18s linear infinite;
 }
 
-/* Different positions & delays */
 .stars span:nth-child(1) { left: 10%; animation-delay: 0s; }
 .stars span:nth-child(2) { left: 25%; animation-delay: 4s; }
 .stars span:nth-child(3) { left: 40%; animation-delay: 8s; }
@@ -158,92 +148,14 @@ audio {
 .stars span:nth-child(6) { left: 90%; animation-delay: 10s; }
 
 @keyframes floatUp {
-  from {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.6;
-  }
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
+  from { transform: translateY(0); opacity: 0; }
+  20% { opacity: 0.6; }
+  to { transform: translateY(-110vh); opacity: 0; }
 }
 
-/* Ensure card stays above stars */
-.intro-card {
-  position: relative;
-  z-index: 1;
-}
-
-/* =========================
-   FLOATING STARS (VISIBLE)
-   ========================= */
-
-.stars {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.stars span {
-  position: absolute;
-  bottom: -20px;
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
-  animation: floatUp 20s linear infinite;
-}
-
-/* Spread stars across screen */
-.stars span:nth-child(1) { left: 10%; animation-delay: 0s; }
-.stars span:nth-child(2) { left: 25%; animation-delay: 3s; }
-.stars span:nth-child(3) { left: 40%; animation-delay: 6s; }
-.stars span:nth-child(4) { left: 55%; animation-delay: 9s; }
-.stars span:nth-child(5) { left: 70%; animation-delay: 12s; }
-.stars span:nth-child(6) { left: 85%; animation-delay: 15s; }
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-120vh);
-    opacity: 0;
-  }
-}
-
-/* Ensure card is ABOVE stars */
 .intro-card {
   position: relative;
   z-index: 2;
-}
-
-/* Click hint text */
-.tap-text {
-  margin-top: 16px;
-  font-size: 1rem;
-  opacity: 0.8;
-  animation: pulse 1.8s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 0.4; }
-  50% { opacity: 0.9; }
-  100% { opacity: 0.4; }
-}
-
-/* Cursor hint */
-.intro-click-card {
-  cursor: pointer;
 }
 
 /* =========================
@@ -272,7 +184,7 @@ audio {
 }
 
 /* =========================
-   PHOTO CARD FLIP
+   PHOTO CARD FLIP (FIXED)
    ========================= */
 
 .photo-card {
@@ -288,10 +200,12 @@ audio {
   transition: transform 0.8s ease;
 }
 
+/* Flip */
 .photo-card.flipped .photo-inner {
   transform: rotateY(180deg);
 }
 
+/* FRONT */
 .photo-front,
 .photo-back {
   position: absolute;
@@ -301,7 +215,6 @@ audio {
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* Front */
 .photo-front img {
   width: 100%;
   height: 100%;
@@ -309,63 +222,37 @@ audio {
   border-radius: 18px;
 }
 
-/* Back */
+/* BACK */
 .photo-back {
-  background: rgba(255,255,255,0.9);
+  background: linear-gradient(135deg, #fde2f3, #e6d9ff);
   transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
   text-align: center;
   font-size: 1.1rem;
   font-family: 'Dancing Script', cursive;
+  overflow-y: auto;      /* 👈 THIS FIXES MOBILE OVERFLOW */
 }
 
-/* Button tweak */
-.gallery-section button {
-  background: #fff;
-  color: #2b1c3d;
+/* Allow height grow when flipped */
+.photo-card.flipped {
+  height: auto;
 }
 
-.photo-back p {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #3a2a4d;
-  text-align: center;
+.photo-card.flipped .photo-inner {
+  height: auto;
+  min-height: 300px;
 }
 
-.photo-back span {
-  display: block;
-}
+/* =========================
+   TEXT
+   ========================= */
 
-.photo-back em {
-  font-style: normal;
-  font-weight: 600;
-}
-
-/* =================================================
-   GALLERY PAGE ONLY (SCOPED – SAFE)
-   ================================================= */
-
-.gallery-section .photo-back {
-  background: linear-gradient(
-    135deg,
-    #fde2f3,
-    #e6d9ff
-  );
-  position: relative;
-  overflow: hidden;
-}
-
-/* Cute, readable text (gallery only) */
 .gallery-section .gallery-text {
   font-family: 'Poppins', sans-serif;
   font-size: 1.05rem;
   line-height: 1.7;
   color: #4b2b63;
   font-weight: 500;
-  z-index: 2;
 }
 
 .gallery-section .gallery-text span {
@@ -373,132 +260,18 @@ audio {
   margin-bottom: 6px;
 }
 
-.gallery-section .gallery-text em {
-  font-style: normal;
-  font-weight: 600;
-}
-
 /* =========================
-   Sparkles – Gallery only
+   MOBILE STACK FIX
    ========================= */
 
-.gallery-section .gallery-sparkles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.gallery-section .gallery-sparkles span {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: rgba(255,255,255,0.85);
-  border-radius: 50%;
-  animation: galleryFloatStar 6s infinite ease-in-out;
-}
-
-.gallery-section .gallery-sparkles span:nth-child(1) {
-  top: 20%;
-  left: 30%;
-  animation-delay: 0s;
-}
-
-.gallery-section .gallery-sparkles span:nth-child(2) {
-  top: 60%;
-  left: 70%;
-  animation-delay: 1.5s;
-}
-
-.gallery-section .gallery-sparkles span:nth-child(3) {
-  top: 40%;
-  left: 50%;
-  animation-delay: 3s;
-}
-
-.gallery-section .gallery-sparkles span:nth-child(4) {
-  top: 70%;
-  left: 20%;
-  animation-delay: 4.5s;
-}
-
-@keyframes galleryFloatStar {
-  0% {
-    transform: translateY(0) scale(0.8);
-    opacity: 0.4;
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
-  50% {
-    transform: translateY(-10px) scale(1);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(0) scale(0.8);
-    opacity: 0.4;
-  }
-}
-
-/* Cute hint text – gallery only */
-.gallery-section .gallery-hint {
-  margin-top: 12px;
-  font-size: 0.95rem;
-  color: #6a4b8c;
-  opacity: 0.85;
-  animation: galleryHintPulse 2s infinite;
-}
-
-@keyframes galleryHintPulse {
-  0% { opacity: 0.4; }
-  50% { opacity: 0.9; }
-  100% { opacity: 0.4; }
 }
 
 /* =========================
-   GRANDFATHER PAGE ONLY
-   ========================= */
-
-.grandfather-section {
-  background: linear-gradient(
-    135deg,
-    #fbe7d3,
-    #f6d6c9,
-    #f0cfc0
-  );
-  color: #4a2f24;
-}
-
-.grandfather-card {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(10px);
-  border-radius: 28px;
-  padding: 70px 32px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-}
-
-/* Text styling for emotional tone */
-.grandfather-section h1 {
-  color: #3a2318;
-}
-
-.grandfather-section p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-top: 18px;
-  color: #5a3b2e;
-}
-
-/* Button */
-.grandfather-section button {
-  background: #ffffff;
-  color: #3a2318;
-}
-
-.grandfather-section button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* =========================
-   GRANDFATHER PAGE ONLY
+   GRANDFATHER SECTION
    ========================= */
 
 .grandfather-section {
@@ -519,13 +292,11 @@ audio {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
 }
 
-/* Heading */
 .grandfather-section h1 {
   color: #3a2318;
   margin-bottom: 24px;
 }
 
-/* Text */
 .grandfather-section p {
   font-size: 1.05rem;
   line-height: 1.85;
@@ -533,7 +304,6 @@ audio {
   color: #5a3b2e;
 }
 
-/* Image styling */
 .grandfather-image {
   margin: 30px auto 20px;
   max-width: 320px;
@@ -545,7 +315,6 @@ audio {
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
-/* Button */
 .grandfather-section button {
   background: #ffffff;
   color: #3a2318;
@@ -556,23 +325,20 @@ audio {
   box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-
 /* =========================
-   MESSAGE / LETTER PAGE ONLY
+   LETTER PAGE
    ========================= */
 
 .letter {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Letter heading */
 .letter h1 {
   font-size: clamp(1.8rem, 5vw, 2.4rem);
   font-weight: 600;
   margin-bottom: 24px;
 }
 
-/* Letter text */
 .letter p {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -582,7 +348,7 @@ audio {
 }
 
 /* =========================
-   FINALE PAGE ONLY
+   FINALE
    ========================= */
 
 .finale-section {
@@ -603,7 +369,6 @@ audio {
   box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
 
-/* Circular image */
 .finale-image {
   width: 180px;
   height: 180px;
@@ -620,14 +385,12 @@ audio {
   object-fit: cover;
 }
 
-/* Heading */
 .finale-section h1 {
   font-size: clamp(2rem, 6vw, 2.6rem);
   margin-bottom: 18px;
   color: #2b1c3d;
 }
 
-/* Text */
 .finale-section p {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -635,7 +398,6 @@ audio {
   color: #4b3b63;
 }
 
-/* Final note */
 .finale-section .final-note {
   margin-top: 22px;
   font-weight: 500;
