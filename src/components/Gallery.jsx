@@ -114,7 +114,6 @@ const photos = [
       <>
         <span>Thanks for clicking this✨ moment 🎬</span>
         <span>
-          It was a cute moment.  
           Enjoy the song - 🤍
         </span>
       </>
