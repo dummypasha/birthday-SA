@@ -3,7 +3,7 @@ import { useState, useRef } from 'react'
 
 import img1 from '../assets/girl1.png'
 import img2 from '../assets/girl1.png'
-import img3 from '../assets/girl1.png'
+import img4 from '../assets/girl1.png'
 
 import clickSound from '../assets/click.mp3'
 import memorySound from '../assets/memory.mp3'
@@ -64,9 +64,52 @@ const photos = [
     )
   },
 
+   {
+  img: img2,
+  text: (
+    <>
+      <span>Heyyy 😂
+      First of all, I really don’t know how to start this… I don’t have as many words as you do. But jokes apart…✨
+      </span> 
+    <span>
+    The way you are… the way you respect your parents… and the way you carry yourself with your friends — it’s honestly sooo attractive in a personality way.
+    Like, not everyone has that balance. 
+    Maturity + innocence + little bit drama + little bit attitude = you. 😂✨
+     You know exactly how to behave in every situation —
+    classy when needed, fun when it’s light, mature when it matters.
+    </span>
+    <span>
+    From our school days till now, it honestly feels unbelievable.
+    every thing is unplanned, It just happened… naturally…
+     You’re actually the only one I’m still in touch with...
+    </span>
+    <span>
+    You may have your gang, your friends, your fans club also I think 😂
+    So I don’t even know what position I hold there from yourside… but in my list of closest people? You’re definitely in top places.
+    </span>
+    <span>
+    Till now what I’ve observed about you — you have great knowledge. Like sometimes I’m like, “Madam encyclopedia aa?” 😂
+    and Sometimes i have doubt too … secret ga coaching center kuda nadpiyochu meru ani 😂
+    </span>
+      <span>
+      And from now on, I don’t know why, but I feel like telling you this — 
+        if you’re ever holding any pain inside, please don’t carry it alone. Don’t let it weigh you down.
+        Everything is already going in a good direction for you.
+        In life, education, and in every aspect — don’t overthink about others. 
+        You’re already doing good. Just focus on yourself and keep trying your best. 
+        That’s more than enough. Don’t compare, don’t stress about others. You’re doing great as you are. 💛
+      </span>
+      <span>
+      So yeah fianlly masth aindi inka … just stay the same.
+      But maybe you can reduce fans count a little okay? Fans count koncham control lo petti mamlani kuda grthupetukondi
+      </span>
+    </>
+  )
+},
+
  
   {
-    img: img3,
+    img: img4,
     text: (
       <>
         <span>Thanks for clicking this✨ moment 🎬</span>
